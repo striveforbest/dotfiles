@@ -13,7 +13,8 @@ export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:"
 export BZIP2_PATH="/opt/homebrew/opt/bzip2/bin"
 export OPEN_SSL_PATH="/opt/homebrew/opt/openssl@3/bin"
 export GRAPHVIZ_DIR="/opt/homebrew/opt/graphviz"
-export PATH=$HOMEBREW_PATH:$SUBLIME_PATH:$OPEN_SSL_PATH:$GRAPHVIZ_DIR:$USER_BIN_PATH:$POSTGRES_PATH:$HOME:$BZIP2_PATH:$PATH:.
+export USER_PIP="$HOME/.local/bin"
+export PATH=$HOMEBREW_PATH:$SUBLIME_PATH:$OPEN_SSL_PATH:$GRAPHVIZ_DIR:$USER_BIN_PATH:$POSTGRES_PATH:$HOME:$BZIP2_PATH:$USER_PIP:$PATH:.
 
 #-------#
 # PyEnv #
@@ -57,6 +58,12 @@ export PKG_CONFIG_PATH="$(brew --prefix openssl)/lib/pkgconfig"
 #----------#
 export LDFLAGS="${LDFLAGS} -L$(brew --prefix graphviz)/lib"
 export CFLAGS="${CPPFLAGS} -I$(brew --prefix graphviz)/include"
+#-------#
+# Libev #
+#-------#
+export LDFLAGS="-L$(brew --prefix libev)/lib $LDFLAGS"
+export CPPFLAGS="-I$(brew --prefix libev)/include $CPPFLAGS"
+export PKG_CONFIG_PATH="$(brew --prefix libev)/lib/pkgconfig:$PKG_CONFIG_PATH"
 
 #------#
 # zlib #
@@ -106,6 +113,12 @@ export PKG_CONFIG_PATH="${PKG_CONFIG_PATH} $(brew --prefix libffi)/lib/pkgconfig
 export LDFLAGS="${LDFLAGS} -L$(brew --prefix openblas)/lib"
 export CPPFLAGS="${CPPFLAGS} -I$(brew --prefix openblas)/include"
 export PKG_CONFIG_PATH="${PKG_CONFIG_PATH} $(brew --prefix openblas)/lib/pkgconfig"
+
+#----------#
+# graphviz #
+#----------#
+export LDFLAGS="${LDFLAGS} -L$(brew --prefix graphviz)/lib"
+export CFLAGS="${CPPFLAGS} -I$(brew --prefix graphviz)/include"
 
 #-------------------#
 # VirtualEnvWrapper #
@@ -244,3 +257,11 @@ if [ -f '/Users/striveforbest/Downloads/google-cloud-sdk/completion.zsh.inc' ]; 
 # PDM
 export PDM_VENV_PROMPT='{project_name}-py{python_version}'
 
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/striveforbest/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
+
+# OpenClaw Completion
+source "/Users/striveforbest/.openclaw/completions/openclaw.zsh"

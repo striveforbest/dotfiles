@@ -10,6 +10,11 @@ alias unsetdjangoenv="unset DJANGO_SETTINGS_MODULE"
 alias htop="sudo htop"
 alias rsync="rsync -avzh --info=progress2"
 
+
+# openclaw
+alias openclaw='nocorrect openclaw'
+
+
 # list shortcuts
 alias ll="ls -ahlF"
 alias lls="ls -s | sort -n"
