@@ -1,0 +1,29 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# Backups
+*.broken
+*.backup-*
+
+# GPG private material — NEVER commit
+.gnupg/private-keys-v1.d/
+.gnupg/openpgp-revocs.d/
+.gnupg/pubring.kbx
+.gnupg/pubring.kbx~
+.gnupg/trustdb.gpg
+.gnupg/random_seed
+.gnupg/*.gpg
+.gnupg/.#*

@@ -1,39 +1,38 @@
 [user]
 	name = Alex Zagoro
 	email = alex@eagerminds.co
-	signingkey = 4B1BD6FF
+	signingkey = D4BBA9489098BB82621CEEA2DA5C4A08E22F31E9
 [color]
-    ui = true
+	ui = true
 [core]
-	excludesfile = /Users/alex.zagoro/.gitignore_global
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Users/striveforbest/Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+	excludesfile = ~/.gitignore_global
 [commit]
-	template = /Users/alex.zagoro/.stCommitMsg
 	gpgsign = true
-	# gpgsign = true
-[color]
-    ui = true
 [push]
 	default = simple
 	autoSetupRemote = true
-[alias]
-    co = checkout
-    ci = commit
-    st = status
-    br = branch
-    hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
-    type = cat-file -t
-    dump = cat-file -p
 [pull]
 	rebase = true
-[submodule] 
+[init]
+	defaultBranch = main
+[submodule]
 	recurse = true
 [gpg]
-	program = /usr/local/bin/gpg
+	program = gpg
 [tag]
+	gpgsign = true
 	forceSignAnnotated = true
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+	type = cat-file -t
+	dump = cat-file -p
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "sourcetree"]
+	cmd = ~/Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
