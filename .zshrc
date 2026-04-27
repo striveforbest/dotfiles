@@ -66,13 +66,6 @@ export PKG_CONFIG_PATH="$(brew --prefix openssl)/lib/pkgconfig"
 export LDFLAGS="${LDFLAGS} -L$(brew --prefix graphviz)/lib"
 export CFLAGS="${CPPFLAGS} -I$(brew --prefix graphviz)/include"
 
-#-------#
-# Libev #
-#-------#
-export LDFLAGS="-L$(brew --prefix libev)/lib $LDFLAGS"
-export CPPFLAGS="-I$(brew --prefix libev)/include $CPPFLAGS"
-export PKG_CONFIG_PATH="$(brew --prefix libev)/lib/pkgconfig:$PKG_CONFIG_PATH"
-
 #------#
 # zlib #
 #------#
@@ -96,9 +89,9 @@ export PKG_CONFIG_PATH="${PKG_CONFIG_PATH} $(brew --prefix readline)/lib/pkgconf
 #-------#
 # icu4c #
 #-------#
-export LDFLAGS="${LDFLAGS} -L$(brew --prefix icu4c)/lib"
-export CPPFLAGS="${CPPFLAGS} -I$(brew --prefix icu4c)/include"
-export PKG_CONFIG_PATH="${PKG_CONFIG_PATH} $(brew --prefix icu4c)/lib/pkgconfig"
+export LDFLAGS="${LDFLAGS} -L$(brew --prefix icu4c@77)/lib"
+export CPPFLAGS="${CPPFLAGS} -I$(brew --prefix icu4c@77)/include"
+export PKG_CONFIG_PATH="${PKG_CONFIG_PATH} $(brew --prefix icu4c@77)/lib/pkgconfig"
 
 #--------#
 # sqlite #
@@ -106,13 +99,6 @@ export PKG_CONFIG_PATH="${PKG_CONFIG_PATH} $(brew --prefix icu4c)/lib/pkgconfig"
 export LDFLAGS="${LDFLAGS} -L$(brew --prefix sqlite)/lib"
 export CPPFLAGS="${CPPFLAGS} -I$(brew --prefix sqlite)/include"
 export PKG_CONFIG_PATH="${PKG_CONFIG_PATH} $(brew --prefix sqlite)/lib/pkgconfig"
-
-#--------#
-# LibFFI #
-#--------#
-export LDFLAGS="${LDFLAGS} -L$(brew --prefix libffi)/lib"
-export CPPFLAGS="${CPPFLAGS} -I$(brew --prefix libffi)/include"
-export PKG_CONFIG_PATH="${PKG_CONFIG_PATH} $(brew --prefix libffi)/lib/pkgconfig"
 
 #----------#
 # OpenBLAS #
