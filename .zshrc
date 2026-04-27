@@ -168,7 +168,6 @@ plugins=(
     nvm
     pre-commit
     pip
-    pipenv
     poetry
     pyenv
     python
