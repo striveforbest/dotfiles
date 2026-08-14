@@ -1,0 +1,89 @@
+# shell shortcuts
+alias getip='ifconfig | grep "inet " | grep -v 127.0.0.1 | cut -d\  -f2'
+alias skim="(head -5; tail -5) <"
+alias su="su -"
+alias whichall="type -all"
+alias flushdns="dscacheutil -flushcache"
+alias unsetdjangoenv="unset DJANGO_SETTINGS_MODULE"
+alias htop="sudo htop"
+
+# NOTE: do NOT alias sudo to "sudo -E". Preserving the environment across the
+# privilege boundary is the thing sudo exists to prevent. Opt in per command.
+alias sudoe="sudo -E"
+
+# NOTE: do NOT alias rsync itself. macOS ships rsync 2.6.9, which has no
+# --info flag, so aliasing rsync breaks every script and every copy/paste.
+alias rs="rsync -avzh --info=progress2"
+
+# openclaw
+alias openclaw='nocorrect openclaw'
+
+
+# list shortcuts
+alias ll="ls -ahlF"
+alias lls="ls -s | sort -n"
+
+
+# verbose output
+alias cp="cp -iv"
+alias mv="mv -iv"
+alias mkdir="mkdir -pv"
+
+
+# colors colors colors
+alias grep="grep --color=auto"
+alias less="less -r"
+alias tree="tree -C"
+
+
+# useful cd shortcuts
+alias ..="cd .."
+alias ...="cd ../../"
+alias projects="cd $HOME/projects"
+alias sublpackages="cd $HOME/Library/Application\ Support/Sublime\ Text/Packages/User"
+
+
+# removes all *.pyc from current directory and all subdirectories
+alias pycclean='find . -name "*.pyc" -exec rm {} \;'
+alias migrations_clean='ls */migrations/*.py | egrep -v __init__.py | xargs rm'
+
+# shortcut to determine your current PYTHONPATH, useful in debugging when switching between virtualenv's
+alias pypath='python -c "import sys; print(sys.path)" | tr "," "\n" | grep -v "egg"'
+
+
+# django aliases
+alias killrunserver='pkill -f runserver'
+alias pytest='pytest --verbosity=3 --pdb --pdbcls=IPython.terminal.debugger:Pdb -s'
+
+# pipenv
+alias prun='pipenv run'
+alias prunm='pipenv run python manage.py'
+
+#pdm
+alias pr='pdm run'
+alias pm='pdm run python manage.py'
+
+# django management commands aliases
+alias collectstatic='python manage.py collectstatic --noinput'
+alias compress='python manage.py compress'
+alias djshell='python manage.py shell_plus'
+alias dbshell='python manage.py dbshell'
+alias debshell='python manage.py debugsqlshell'
+alias loaddata='python manage.py loaddata'
+alias lsmigrations='python manage.py showmigrations'
+alias emptymigration='python manage.py makemigrations --empty'
+alias mkmigrations='python manage.py makemigrations'
+alias mergemigrations='python manage.py makemigrations --merge'
+alias migrate='python manage.py migrate'
+alias rebuildindex='python manage.py rebuild_index --noinput --verbosity=2'
+alias run='python manage.py runserver 0.0.0.0:8000'
+alias runplus='python manage.py runserver_plus 0.0.0.0:8000'
+alias runhard='killrunserver; pycclean; run'
+alias runplushard='killrunserver; pycclean; runplus'
+alias superuser='python manage.py createsuperuser'
+
+# docker
+alias stopcontainers='docker stop $(docker ps -aq)'
+alias rmcontainers='docker rm -vf $(docker ps -aq)'
+alias rmimages='docker rmi -f $(docker images -aq)'
+alias rmvolumes='docker volume rm $(docker volume ls -qf dangling=true)'

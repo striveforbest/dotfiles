@@ -1,0 +1,18 @@
+# Global ignores only -- things true of EVERY repo on this machine.
+# Project-specific rules (build dirs, fixtures, pyproject.toml) belong in that
+# project's own .gitignore. A global rule that hides pyproject.toml silently
+# breaks every new Python project.
+
+.DS_Store
+*.log
+*.psd
+*.fla
+*.swp
+*.pyc
+*~
+#*#
+.#*
+.python-version
+.idea/
+
+**/.claude/settings.local.json

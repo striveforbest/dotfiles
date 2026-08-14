@@ -1,0 +1,32 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# Backups
+*.broken
+*.backup-*
+
+# Machine-local shell settings (personal paths, addresses, accounts)
+.zshrc.local
+.aliases.local
+.functions.local
+
+# GPG -- $GNUPGHOME is symlinked into this working tree, so deny everything
+# and allow back only the two files that are safe to publish. A deny-list is
+# not good enough here: gpg adds new state files over time and any one of them
+# that is missed becomes a commit.
+.gnupg/*
+!.gnupg/gpg.conf
+!.gnupg/gpg-agent.conf

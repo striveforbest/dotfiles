@@ -1,0 +1,43 @@
+[user]
+	name = Alex Zagoro
+	email = alex@eagerminds.co
+	signingkey = D4BBA9489098BB82621CEEA2DA5C4A08E22F31E9
+[color]
+	ui = true
+[core]
+	excludesfile = ~/.gitignore_global
+[commit]
+	gpgsign = true
+[push]
+	default = simple
+	autoSetupRemote = true
+[pull]
+	rebase = true
+[init]
+	defaultBranch = main
+[submodule]
+	recurse = true
+[gpg]
+	program = gpg
+[tag]
+	gpgsign = true
+	forceSignAnnotated = true
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+	type = cat-file -t
+	dump = cat-file -p
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[credential "https://github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
